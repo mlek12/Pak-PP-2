@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kisah Sukses Prajogi Pangestu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --brand:#153828; --brand-2:#20c997; --ink:#0f172a; --text:#334155;
+      --card:#ffffff; --bg:#f8f9fa; --ring:rgba(255,255,255,.98); --shadow:rgba(0,0,0,.18);
+    }
+    html{ scroll-behavior:smooth; }
+    body{ font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif; background:var(--bg); color:var(--text); }
+
+    /* HERO split */
+    .hero{ background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; padding:4.5rem 0; }
+    .eyebrow{ display:inline-block; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;
+      background:rgba(255,255,255,.18); padding:.35rem .6rem; border-radius:999px; margin-bottom:.75rem; }
+    .split-img{
+      width:min(420px,90%); aspect-ratio:1/1; object-fit:cover; object-position:50% 30%; border-radius:50%;
+      box-shadow:0 0 0 8px var(--ring), 0 18px 42px rgba(0,0,0,.22);
+      filter:grayscale(6%) contrast(1.04); transition:transform .2s, box-shadow .2s; cursor:pointer;
+    }
+    .split-img:hover{ transform:translateY(-2px) scale(1.01); box-shadow:0 0 0 8px var(--ring), 0 22px 50px rgba(0,0,0,.26); }
+    .btn-outline-light{
+    border-width: 2px;
+    border-radius: .6rem;
+    font-weight: 600;
+    }
+    .btn-outline-light:hover{
+    background:#fff;
+    color:#0f172a; /* kontras di atas gradient hijau */
+    }
+    .section-title{ text-align:center; color:var(--brand); font-weight:700; margin:1.25rem 0; }
+
+    .story-card{ background:var(--card); border-radius:1rem; padding:1.6rem;
+      box-shadow:0 8px 24px rgba(0,0,0,.08); transition:transform .25s, box-shadow .25s; margin-bottom:1rem; }
+    .story-card:hover{ transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,.12); }
+    .story-card p{ text-align:justify; text-justify:inter-word; hyphens:auto; line-height:1.78; margin-bottom:1rem; }
+
+    .story-card h5{ position:relative; color:var(--ink); font-weight:600; margin-bottom:.5rem; }
+    .story-card h5::after{ content:""; display:block; width:44px; height:3px; background:var(--brand); border-radius:2px; margin-top:.35rem; opacity:.9; }
+
+    .figure-card img{ max-width:520px; border-radius:.75rem; box-shadow:0 8px 22px rgba(0,0,0,.12); }
+
+    footer{ background:#212529; color:#adb5bd; padding:2rem 1rem; text-align:center; }
+    footer a{ color:#20c997; text-decoration:none; } footer a:hover{ text-decoration:underline; }
+
+    @media (max-width:576px){ .hero{ padding:3.25rem 0; } .story-card{ padding:1.25rem; } }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="eyebrow">Kisah Sukses</span>
+          <h1 class="display-6 fw-bold mb-2">Prajogi Pangestu</h1>
+          <p class="lead mb-3">Semangat muda, kerja keras, dan inovasi—berangkat dari nilai keluarga menuju ekosistem usaha modern.</p>
+          <div class="d-flex gap-2">
+            <a href="#perjalanan" class="btn btn-outline-light btn-lg">Perjalanan</a>
+            <a href="#pelajaran" class="btn btn-outline-light btn-lg">Pelajaran</a>
+            <a href="#kesimpulan" class="btn btn-outline-light btn-lg">Kesimpulan</a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="poto 2.jpg" alt="Prajogi Pangestu" class="split-img"
+               data-bs-toggle="modal" data-bs-target="#fotoModal"
+               data-src="poto 2.jpg" data-title="Prajogi Pangestu - Foto 1" data-year="2010" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MODAL FOTO -->
+  <div class="modal fade" id="fotoModal" tabindex="-1" aria-labelledby="fotoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered text-center">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="fotoModalLabel">Foto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <img id="modalImage" src="" alt="" class="img-fluid rounded mb-3"/>
+          <p class="mb-0"><strong>Tahun Foto:</strong> <span id="yearVal">—</span></p>
+          <p id="modalCaption" class="text-muted small mb-0"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container my-5">
+
+<section id="perjalanan" class="mb-4">
+  <h2 class="section-title">Perjalanan Singkat</h2>
+
+  <div class="row g-4">
+    <div class="col-12 col-md-6 d-flex">
+      <div class="story-card flex-grow-1">
+        <h5>Pengenalan</h5>
+        <p>Prajogi Pangestu, atau akrab disapa Pak PP, tumbuh dari keluarga sederhana yang menjunjung disiplin dan kejujuran. Sejak kecil ia terbiasa membantu orang tua, belajar menata prioritas, dan mengenal nilai kerja keras dari hal-hal kecil seperti mengatur uang saku serta menuntaskan tanggung jawab harian.</p>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 d-flex">
+      <div class="story-card flex-grow-1">
+        <h5>Jatuh–Bangun Usaha Remaja</h5>
+        <p>Memasuki remaja, keberanian mencoba membuatnya menekuni berbagai usaha kecil: menjual kebutuhan teman sekolah, menjadi reseller online, hingga menawarkan jasa desain sederhana. Modal terbatas, barang kadang telat, bahkan pernah ditolak calon pelanggan. Namun, tiap kendala ia catat sebagai pelajaran: apa yang harus diperbaiki, bagaimana memperjelas janji layanan, dan cara menjaga komunikasi agar kepercayaan tidak hilang.</p>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 d-flex">
+      <div class="story-card flex-grow-1">
+        <h5>Fokus Produk Kreatif & Layanan Digital</h5>
+        <p>Dari proses jatuh–bangun itu, cara berpikirnya makin rapi. Ia mulai memetakan kebutuhan pasar, memanfaatkan media sosial untuk riset audiens, dan membangun brand personal yang konsisten. Pelan-pelan fokus diarahkan ke produk kreatif dan layanan digital: membuat konten, mengelola kampanye, serta membantu UMKM tampil lebih profesional. Keuntungan tidak langsung besar, tapi ia disiplin reinvest ke kualitas—alat kerja, pembelajaran, dan tim kecil dengan visi serupa.</p>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 d-flex">
+      <div class="story-card flex-grow-1">
+        <h5>Pasar Modal & Ekosistem Barito Group</h5>
+        <p>Kalau dulu ia melihat bisnis hanya dari operasional harian, fase ini membuatnya masuk ke cara kerja pasar modal: bagaimana harga terbentuk di <em>order book</em>, peran market maker/penyedia likuiditas menjaga <em>spread</em> dan kedalaman, serta kenapa volatilitas bisa tinggi pada saham yang likuiditasnya tipis. Ia lalu menelusuri ekosistem usaha yang dibangunnya—Barito Group—mulai dari PT Barito Pacific Tbk (BRPT) sebagai induk, PT Chandra Asri Pacific Tbk (TPIA) di petrokimia, hingga PT Barito Renewables Energy Tbk (BREN/Star Energy) di energi terbarukan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- FOTO 2 -->
+    <section id="foto-2" class="my-4">
+  <div class="story-card figure-card">
+    <figure class="m-0 text-center">
+      <img
+        src="poto 1.png"
+        alt="Prajogi Pangestu - Foto 2"
+        class="img-fluid d-inline-block rounded"
+        loading="lazy"
+        data-bs-toggle="modal"
+        data-bs-target="#fotoModal"
+        data-src="poto 1.png"
+        data-title="Prajogi Pangestu - Foto 2"
+        data-year="2025"
+        data-caption="Pencapaian saat ini yang diraih oleh Pak PP."
+      />
+      <figcaption class="figure-caption mt-2">Pencapaian saat ini yang diraih oleh Pak PP</figcaption>
+    </figure>
+  </div>
+</section>
+    <!-- PELAJARAN -->
+    <section id="pelajaran" class="mb-4">
+      <h2 class="section-title">Pelajaran yang Diperoleh</h2>
+        <div class="row g-4">
+    <div class="col-12 col-md-6 d-flex">
+      <div class="story-card flex-grow-1">
+        <h5>Jangan Takut Gagal</h5>
+        <p>Kegagalan bukan akhir, tapi batu loncatan menuju kesuksesan. Prajogi membuktikan bahwa jatuh bangun adalah bagian penting dari perjalanan.</p>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 d-flex">
+      <div class="story-card flex-grow-1">
+        <h5>Manfaatkan Teknologi</h5>
+        <p>Dengan digital marketing dan platform online, ia mampu memperluas pasar dan menjangkau lebih banyak pelanggan dengan cepat.</p>
+      </div>
+    </div>   
+  </div>
+    </section>
+
+    <!-- KESIMPULAN -->
+    <section id="kesimpulan" class="mb-5">
+      <h2 class="section-title">Kesimpulan</h2>
+      <div class="story-card text-center">
+        <p>Kisah Prajogi Pangestu menegaskan bahwa pertumbuhan berkelanjutan lahir dari konsistensi kecil yang dilakukan terus-menerus: berani mencoba, cepat belajar dari data, fokus pada kebutuhan pelanggan, dan cerdas memanfaatkan teknologi. Dengan fondasi nilai yang kuat serta keberanian mengambil risiko terukur, usaha kecil dapat tumbuh menjadi ekosistem yang berdampak nyata.</p>
+        <small class="text-muted d-block">Catatan: narasi bersifat edukatif, bukan ajakan investasi.</small>
+        <a href="#perjalanan" class="btn btn-success mt-3">Baca Lagi</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Kisah Inspiratif | Dibuat oleh <a href="https://www.instagram.com/alekx_nikel?igsh=djNqNHp0ank5dHdk" target="_blank" rel="noopener">Abdul Malik</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (() => {
+      const modalImage   = document.getElementById('modalImage');
+      const modalLabel   = document.getElementById('fotoModalLabel');
+      const yearVal      = document.getElementById('yearVal');
+      const modalCaption = document.getElementById('modalCaption');
+
+      document.querySelectorAll('[data-bs-target="#fotoModal"]').forEach(el => {
+        el.addEventListener('click', () => {
+          const src     = el.dataset.src || el.getAttribute('src') || "";
+          const title   = el.dataset.title || el.getAttribute('alt') || "Foto";
+          const year    = el.dataset.year || "—";
+          const caption = el.dataset.caption || "";
+          modalImage.src = src; modalImage.alt = title;
+          modalLabel.textContent = title; yearVal.textContent = year;
+          modalCaption.textContent = caption;
+        }, { passive: true });
+      });
+    })();
+  </script>
+</body>
+</html>
+
